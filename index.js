@@ -71,7 +71,7 @@ if (message.member.id != '183549541470044161') {
           config.roles.splice(index, 1);
           message.channel.send(`Role Removed`)
         }
-        else if(!args[0]){
+        if(!args[0]){
           message.channel.send(`Args: <add, list, remove> @role`)
         }else{
           message.channel.send(`Args: <add, list, remove> @role`)
