@@ -10,6 +10,12 @@ client.login(process.env.BOT_TOKEN);
 
 client.on("ready", () => {
     console.log(`frais et dispo`);
+    try {
+        let link = await bot.generateInvite(['ADMINISTRATOR']);
+        console.log(link);
+    } catch (e) {
+        console.log(e.stack);
+    }
 });
 
 async function roleChange(){
