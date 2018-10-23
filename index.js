@@ -11,7 +11,7 @@ client.login(process.env.BOT_TOKEN);
 client.on('ready', async () => {
     console.log(`Le bot est prêt : ${bot.user.username}`);
     try {
-        let link = await bot.generateInvite(['ADMINISTRATOR']);
+        let link = await client.generateInvite(['ADMINISTRATOR']);
         console.log(link);
     } catch (e) {
         console.log(e.stack);
