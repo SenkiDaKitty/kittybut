@@ -9,7 +9,7 @@ const client = new Discord.Client();
 client.login(process.env.BOT_TOKEN);
 
 client.on('ready', async () => {
-    console.log(`Le bot est prêt : ${bot.user.username}`);
+    console.log(`Le bot est prêt : ${client.user.username}`);
     try {
         let link = await client.generateInvite(['ADMINISTRATOR']);
         console.log(link);
