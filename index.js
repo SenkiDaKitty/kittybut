@@ -63,7 +63,7 @@ if (message.member.id != '183549541470044161') {
           })
           message.channel.send("Roles: "+roles)
         }
-        else if(args[0] == "remove"){
+        if(args[0] == "remove"){
             if (message.member.id != '183549541470044161') {
     return message.channel.sendMessage("Ask to Senki, only this person can do that")
 } else {
