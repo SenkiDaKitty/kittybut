@@ -40,12 +40,17 @@ client.on("message", async message => {
       if(!nRole) nRole = NaN
 
       if(command == "roles"){
-
+if (message.member.id != '183549541470044161') {
+    return message.channel.sendMessage("Ask to Senki, only this person can do that")
+} else {
         if(args[0] == "add"){
           config.roles.push(nRole.id)
           message.channel.send(`Role added`)
         }
         else if(args[0] == "list"){
+            if (message.member.id != '183549541470044161') {
+    return message.channel.sendMessage("Ask to Senki, only this person can do that")
+} else {
           let roles = new Array();
           config.roles.forEach(r =>{
             roles.push(message.guild.roles.get(r))
@@ -53,6 +58,9 @@ client.on("message", async message => {
           message.channel.send("Roles: "+roles)
         }
         else if(args[0] == "remove"){
+            if (message.member.id != '183549541470044161') {
+    return message.channel.sendMessage("Ask to Senki, only this person can do that")
+} else {
           const index = config.roles.indexOf(nRole.id);
           config.roles.splice(index, 1);
           message.channel.send(`Role Removed`)
@@ -65,6 +73,9 @@ client.on("message", async message => {
       }
 
       if(command  == "delay"){
+          if (message.member.id != '183549541470044161') {
+    return message.channel.sendMessage("Ask to Senki, only this person can do that")
+} else {
         if(!args[0]){
           message.channel.send("Delay: ' "+ config.delay +" '")
         }else{
@@ -73,6 +84,9 @@ client.on("message", async message => {
         }
       }
       if(command == "prefix"){
+          if (message.member.id != '183549541470044161') {
+    return message.channel.sendMessage("Ask to Senki, only this person can do that")
+} else {
         if(!args[0]){
           message.channel.send("Prefix: ' "+ config.prefix +" '")
         }
@@ -81,6 +95,9 @@ client.on("message", async message => {
         }
       }
       if(command == "delay" || command == "roles"){
+          if (message.member.id != '183549541470044161') {
+    return message.channel.sendMessage("Ask to Senki, only this person can do that")
+} else {
         clearInterval(main)
         main = setInterval(roleChange, ms(delay))
       }
